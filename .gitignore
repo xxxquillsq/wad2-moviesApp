@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# add a reference to the configuration file to ensure it is not added to the Git repo
+cypress.env.json 
