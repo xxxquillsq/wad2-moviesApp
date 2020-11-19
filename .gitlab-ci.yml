@@ -7,11 +7,6 @@ stages:
   - build
   - test
   
-stages:
-  - install
-  - build
-  - test
-
 # NEW
 variables:
    npm_config_cache: "$CI_PROJECT_DIR/.npm"
@@ -41,6 +36,16 @@ bundle_app:
   stage: build
   script:
     - npm run build
+  artifacts:
+    paths:
+      - build/
+
+build_jobX:
+  stage: build
+  only:
+    - demobranch
+  script:
+    - echo "build job X on demoBranch works"
 
 e2etest:    
     stage: test
