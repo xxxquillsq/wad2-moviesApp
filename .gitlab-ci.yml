@@ -5,6 +5,7 @@ image: cypress/browsers:node12.0.0-chrome73
 stages:
   - install
   - build
+  - run after the build before test 
   - test
   
 # NEW
@@ -46,6 +47,13 @@ build_jobX:
     - demobranch
   script:
     - echo "build job X on demoBranch works"
+
+exercise_job:
+  stage: run after the build before test 
+  only:
+    - master
+  script:
+    - echo "finish exercise_job"
 
 
 e2etest:    
