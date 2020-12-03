@@ -8,7 +8,8 @@ import FavoriteMoviesPage from './pages/favoritesMoviesPage';
 import WatchListMoviesPage from './pages/watchListMoviesPage';    // exercise4
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
-import UpcomingMoviesPage from './pages/upcomingMoviesPage';    
+import UpcomingMoviesPage from './pages/upcomingMoviesPage'; 
+import LatestMoviesPage from './pages/latestMoviesPage';   // ca  
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
@@ -24,6 +25,7 @@ const App = () => {
             <Switch>
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/movies/upcoming" component={UpcomingMoviesPage} /> 
+          <Route path="/movies/latest" component={LatestMoviesPage} /> 
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
           
