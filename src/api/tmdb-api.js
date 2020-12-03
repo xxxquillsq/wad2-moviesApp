@@ -47,4 +47,4 @@ export const getMovies = () => {
   };
 
   console.log(getTopratedMovies());
-  console.log(getMovies());
+  

@@ -3,17 +3,17 @@ import PageTemplate from '../components/templateMovieListPage';
 import {MoviesContext} from '../contexts/moviesContext';
 import AddToFavoritesButton from '../components/buttons/addToFavorites';
 
-const LatestMoviesPage = () => {
+const TopratedMoviesPage = () => {
   const context = useContext(MoviesContext);
-  const latest = context.latest.filter((m) => {  // New
+  const toprated = context.toprated.filter((m) => {  // New
     return !("favorite" in m);
   });
 
 
   return (
     <PageTemplate
-      title="Latest Movies"
-      movies={latest}  /* Changed */
+      title="Top Rated Movies"
+      movies={toprated}  /* Changed */
       action={(movie) => {
         return <AddToFavoritesButton movie={movie} />;
       }}
@@ -21,4 +21,4 @@ const LatestMoviesPage = () => {
   );
 };
 
-export default LatestMoviesPage;
+export default TopratedMoviesPage;
