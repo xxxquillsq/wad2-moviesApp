@@ -38,10 +38,13 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getLatestMovies = () => {
+  export const getTopratedMovies = () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
       .then(res => res.json())
       .then(json => json.results);
   };
+
+  console.log(getTopratedMovies());
+  console.log(getMovies());
