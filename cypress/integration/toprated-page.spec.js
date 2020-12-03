@@ -32,5 +32,9 @@ describe("Home Page", () => {
       });
     });
 
-
+    describe("Rating Movies button test",() => {
+        it("dispalys a button named Rating movies",()=>{
+            cy.get(".card").eq(1).find("button").contains("rate the movie now");
+        })
+    });
 })
