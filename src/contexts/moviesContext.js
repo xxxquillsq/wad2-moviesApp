@@ -38,7 +38,8 @@ const reducer = (state, action) => {
             ? { ...m, review: action.payload.review }
             : m
         ),
-        upcoming: [...state.upcoming],//
+        upcoming: [...state.upcoming],
+        latest: [...state.latest],//
       };
     default:
       return state;
