@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/movies/top_rated" component={TopratedMoviesPage} /> 
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
-          
+        
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />

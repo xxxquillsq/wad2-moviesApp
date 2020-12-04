@@ -46,5 +46,27 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  console.log(getTopratedMovies());
+  export const postMovierating = (id,value) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/rating?api_key=${process.env.REACT_APP_TMDB_KEY}&guest_session_id=34c558276d1a2063b442805450cd635a&language=en-US&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
   
+
+  export const deleteMovierating = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/rating?api_key=${process.env.REACT_APP_TMDB_KEY}&guest_session_id=34c558276d1a2063b442805450cd635a&language=en-US&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+  export const getSimilarMovies = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
