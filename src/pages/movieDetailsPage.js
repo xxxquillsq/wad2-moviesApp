@@ -5,7 +5,6 @@ import SimilarMovies from "../components/similarMovies";
 import PageTemplate from "../components/templateMoviePage";
 import MovieReviews from "../components/movieReviews";
 import useMovie from "../hooks/useMovie";
-import { getSimilarMovies } from "../api/tmdb-api";
 
 const MoviePage = props => {
   const { id } = props.match.params;
