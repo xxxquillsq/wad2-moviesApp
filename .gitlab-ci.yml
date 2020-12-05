@@ -6,7 +6,16 @@ stages:
   - install
   - build
   - test
+  
+# to cache both npm modules and Cypress binary we use environment variables
+# to point at the folders we can list as paths in "cache" job settings
 
+variables:
+   npm_config_cache: "$CI_PROJECT_DIR/.npm"
+   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+   CYPRESS_RECORD_KEY: "1dd517ab-81fb-4a06-98b6-4f8fbd19f4cd"
+   CYPRESS_TMDB_KEY: "ac30d257ab5fd18bd93513cf9e6e27b9"
+   REACT_APP_TMDB_KEY: "ac30d257ab5fd18bd93513cf9e6e27b9"
 # Jobs 
 
 install_dependencies:
@@ -21,3 +30,12 @@ bundle_app:
   stage: build
   script:
     - npm run build
+
+e2etest:    
+    stage: test
+    before_script:
+      - npm install -g http-server
+      - npm install cypress
+    script:
+       # start the server in the background
+      - npm run start:ci
