@@ -36,7 +36,7 @@ describe("Show Similar Movies", () => {
   describe("show similar movies button", () => {
     describe("base test" ,() => {
       it("should display show similar movies button", () => {
-        cy.get("div").eq(2).find("a").eq(2).contains("Show Similar movies"); 
+        cy.get("div").eq(2).find("a").eq(2).contains("Show Similar Movies"); 
         });
       })
 
@@ -47,7 +47,7 @@ describe("Show Similar Movies", () => {
                  .eq(0)
                  .within(() => {
             cy.get("th").eq(0).contains("Title");
-            cy.get("th").eq(1).contains("Context");
+            cy.get("th").eq(1).contains("Overview");
             cy.get("th").eq(2).contains("More");
           });
         });

@@ -36,12 +36,12 @@ const MoviePage = props => {
               </Link>
             )}
           </div>
-          <div lassName="col-12 ">
+          <div className="col-12 ">
           <Link
                 className="btn btn-primary btn-block active"
                 to={`/movies/${id}/similar`}
               >
-                Show Similar movies
+                Show Similar Movies
               </Link>
           </div>
         </div>
