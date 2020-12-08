@@ -11,6 +11,10 @@ import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
+import PersonCard from "../src/components/personCard";//ca
+import PopularPersonList from "../src/components/popularPersonList";
+import FilterControlsPerson from "../src/components/filterControlsPerson";
+import PersonsHeader from "../src/components/headerPopularPersonList";
 
 const sample = {
   adult: false,
@@ -152,3 +156,23 @@ storiesOf("Movie Details Page/MovieHeader", module)
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("default", () => <MovieHeader movie={sample} />);
+
+  storiesOf("Popular person Page/PersonCard", module)
+  .add("default", () => <PersonCard person={sample} />)
+  .add("exception", () => {
+    const sampleNoPoster = { ...sample, poster_path: undefined };
+    return <PersonCard person={sampleNoPoster} />;
+  });
+
+  storiesOf("Popular Person Page/PopularPersonList", module)
+  .add("default", () => {
+    const persons= [sample, sample, sample, sample, sample]
+    return <PopularPersonList persons={persons} />
+});
+
+storiesOf("Popular Person Page/FilterControlsPerson", module)
+  .add("default", () => <FilterControlsPerson /> )
+
+  storiesOf("Popular Person Page/Popular person Header", module).add("default", () => (
+    <PersonsHeader numPersons={10} />
+  ));
