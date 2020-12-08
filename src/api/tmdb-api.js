@@ -62,7 +62,14 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.results);
   };
-
+  export const getRatedMovies= ()=> {
+    return fetch(
+      `https://api.themoviedb.org/3/guest_session/d3f74ec47c9c78ed626218917c84a986/rated/movies?api_key=ac30d257ab5fd18bd93513cf9e6e27b9&language=en-US&sort_by=created_at.asc`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };// ok Array[]
+  
   export const getSimilarMovies = id => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
@@ -71,11 +78,21 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getPersons = id => {
+  
+  export const getPerson = id => {
     return fetch(
       `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
       .then(res => res.json());
   };
 
-  console.log(getPersons(10));
+  export const getPopulerPerson = id => {
+    return fetch(
+      ` https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+ 
+
+console.log(getPopulerPerson());
