@@ -1,9 +1,22 @@
-import React from "react";
+import React, {useState, useEffect}  from "react";
 import PersonHeader from "../components/headerPerson";
 import PersonDetails from "../components/personDetails";
-import "./moviePage.css";
+import "./personPage.css";
 
-const PersonDetailPage = ({ person }) => {
+
+
+  const PersonPage = props => {
+    const { id } = props.match.params
+    const [person, setPerson] = useState(null)
+    useEffect(() => {
+      fetch(
+        `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      ).then(res => res.json())    
+      .then(person => {
+        setPerson(person);
+      })
+    }, [id])
+    
   return (
     <>
       {person ? (
@@ -33,4 +46,4 @@ const PersonDetailPage = ({ person }) => {
   );
 };
 
-export default PersonDetailPage;
+export default PersonPage;

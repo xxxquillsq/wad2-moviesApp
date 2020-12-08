@@ -1,44 +1,30 @@
 import React from "react";
 import "./personDetails.css";
+import "../../globals/fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default ({ person }) => {
+const PersonDetails = props => {
   return (
     <>
-      <h4>Overview</h4>
-      <p>{person.overview}</p>
+<h4>Overview</h4>
+      <p>{props.person.overview}</p>
       <ul className="list-group list-group-horizontal">
         <li key="ruh" className="list-group-item list-group-item-dark">
-          Name (min.)
+          name
         </li>
         <li key="rut" className="list-group-item ">
-          {person.name}
+          {props.person.name}
         </li>
         <li key="rdh" className="list-group-item list-group-item-dark">
-          Person popularity
+          popularity
         </li>
         <li key="rdv" className="list-group-item ">
-          {person.popularity}
+          {props.person.popularity}
         </li>
-      </ul>
-
-      <ul className="list-group list-group-horizontal">
-        <li key="gh" className="list-group-item list-group-item-dark">
-          Genres
-        </li>
-        {person.place_of_birth}
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="slh" className="list-group-item list-group-item-dark">
-          Known for
-        </li>
-        {person.birthday}
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pch" className="list-group-item list-group-item-dark">
-          Production Companies
-        </li>
-        {person.biography}
       </ul>
     </>
+
   );
 };
+
+export default PersonDetails ;
