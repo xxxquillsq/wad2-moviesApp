@@ -15,6 +15,7 @@ import PersonCard from "../src/components/personCard";//ca
 import PopularPersonList from "../src/components/popularPersonList";
 import FilterControlsPerson from "../src/components/filterControlsPerson";
 import PersonsHeader from "../src/components/headerPopularPersonList";
+import PersonDetails from "../src/components/personDetails";
 
 const sample = {
   adult: false,
@@ -175,4 +176,8 @@ storiesOf("Popular Person Page/FilterControlsPerson", module)
 
   storiesOf("Popular Person Page/Popular person Header", module).add("default", () => (
     <PersonsHeader numPersons={10} />
+  ));
+
+  storiesOf("Popular Person Page/PersonDetails", module).add("default", () => (
+    <PersonDetails person={sample} />
   ));

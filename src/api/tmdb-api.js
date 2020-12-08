@@ -96,3 +96,4 @@ export const getMovies = () => {
  
 
 console.log(getPopulerPerson());
+console.log(getMovies());
