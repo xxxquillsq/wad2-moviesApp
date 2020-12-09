@@ -81,19 +81,28 @@ export const getMovies = () => {
   
   export const getPerson = id => {
     return fetch(
-      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
       .then(res => res.json());
   };
 
-  export const getPopulerPerson = id => {
+  export const getPopulerPerson = () => {
     return fetch(
       ` https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
       .then(res => res.json())
       .then(json => json.results);
   };
+  export const getPersonMovie_credits = id => {
+    return fetch(
+      ` 
+      https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=ac30d257ab5fd18bd93513cf9e6e27b9&language=en-US`
+    )
+      .then(res => res.json())
+      .then(json => json.cast);
+  };
  
 
 console.log(getPopulerPerson());
-console.log(getMovies());
+console.log(getPersonMovie_credits(1397778));
+console.log(getMovieReviews(278));

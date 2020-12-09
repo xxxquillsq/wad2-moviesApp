@@ -2,7 +2,7 @@ import React, {useState, useEffect}  from "react";
 import PersonHeader from "../components/headerPerson";
 import PersonDetails from "../components/personDetails";
 import "./personPage.css";
-
+import PersonMovieCredits from "../components/personMovieCredits"
 
 
   const PersonPage = props => {
@@ -36,6 +36,12 @@ import "./personPage.css";
             </div>
             <div className="col-9">
               <PersonDetails person={person} />
+            </div>
+            <div className="col-9">
+             <h3>Movie Credits</h3>
+            </div>
+          <div className="col-9">
+              <PersonMovieCredits person={person} />
             </div>
           </div>
         </>
