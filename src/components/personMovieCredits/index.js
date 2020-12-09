@@ -25,7 +25,7 @@ export default ({ person }) => {
           <th scope="col">Movie Poster</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody >
       {credits.map(r => {
             return (
               <tr key={r.id}>
