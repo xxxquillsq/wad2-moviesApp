@@ -22,6 +22,30 @@ const PersonDetails = props => {
           {props.person.popularity}
         </li>
       </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="ruh" className="list-group-item list-group-item-dark">
+          birthday
+        </li>
+        <li key="rut" className="list-group-item ">
+          {props.person.birthday}
+        </li>
+        <li key="rdh" className="list-group-item list-group-item-dark">
+          place of birth
+        </li>
+        <li key="rdv" className="list-group-item ">
+          {props.person.place_of_birth}
+        </li>
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="rdh" className="list-group-item list-group-item-dark">
+          biography
+        </li>
+        </ul>
+      
+        <li key="rdv" className="list-group-item ">
+          {props.person.biography}
+        </li>
+     
     </>
 
   );

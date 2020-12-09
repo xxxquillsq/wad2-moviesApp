@@ -3,9 +3,9 @@ import "./filterControlsPerson.css";
 
 const FilterControlsPerson = props => {
   const genres = [
-    {id: 1, name: "TV"},
+    {id: 1, name: "All media type"},
     {id: 2, name: "Movie"},
-    {id: 3, name: "all media type"}
+    {id: 3, name: "TV"}
   ]
 
   return (
