@@ -33,12 +33,16 @@ export default ({ person }) => {
                 <td>{r.character}</td>
                 <td>{excerpt(r.overview)}</td>
                 <td>{r.release_date}</td>
-                <td><img src={
+                <td>
+                <Link to={`/movies/${r.id}`}>
+                  <img src={
                   r.poster_path
                     ? `https://image.tmdb.org/t/p/w500/${r.poster_path}`
                     : "./film-poster-placeholder.png"
                 } height="160" width="110" className="poster"
-                alt={r.title}></img></td>
+                alt={r.title}></img>
+                     </Link>
+                </td>
             </tr>
             );
           })}
