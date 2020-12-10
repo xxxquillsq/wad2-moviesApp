@@ -18,7 +18,7 @@ export default ({ movie }) => {
         <tr>
           <th scope="col">Title</th>
           <th scope="col">Overview</th>
-          <th scope="col">More</th>
+          <th scope="col">Movie</th>
         </tr>
       </thead>
       <tbody>
@@ -28,18 +28,14 @@ export default ({ movie }) => {
                 <td>{m.title}</td>
                 <td>{excerpt(m.overview)}</td>
                 <td>
-                  {" "}
-                  <Link
-                    to={{
-                      pathname: `/movies/${m.id}`,
-                      state: {
-                        movies: m,
-                        movie: movie
-                      }
-                    }}
-                  >
-                    Movie detail
-                  </Link>
+                <Link to={`/movies/${m.id}`}>
+                  <img src={
+                  m.poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${m.poster_path}`
+                    : "./film-poster-placeholder.png"
+                } height="160" width="110" className="poster"
+                alt={m.title}></img>
+                     </Link>
                 </td>
               </tr>
             );
