@@ -1,6 +1,6 @@
-let movieId = null
+let movieId = 7240890
 let movie;
-let reviews;
+
 describe("Show Similar Movies", () => {
   before(() => {
     cy.request(
@@ -28,8 +28,8 @@ describe("Show Similar Movies", () => {
       })
   });
   beforeEach(() => {
-    cy.visit(`/`);
-    cy.get(".card").eq(2).find("img").click();
+    cy.visit(`/movies/top_rated`);
+    cy.get(".card").eq(1).find("img").click();
   });
 
 
@@ -53,4 +53,41 @@ describe("Show Similar Movies", () => {
         });
       });
     });
-  });
+
+    describe("similar movies table", () => {
+      describe("base test dispaly table include movie credits" ,() => {
+        it("should display table ", () => {
+          cy.get("div").eq(2).find("a").eq(2).click(); 
+          cy.get("table").find("thead").contains("Title"); 
+          });
+
+        it("should display person's movie credits ", () => {
+          cy.get("div").eq(2).find("a").eq(2).click(); 
+          cy.get("table")
+                 .eq(0)
+                 .within(() => {
+            cy.get("th").eq(0).contains("Title");
+            cy.get("th").eq(1).contains("Overview");
+            cy.get("th").eq(2).contains("Movie");
+          });
+          });
+
+          it("should display movie poster ", () => {
+            cy.get("div").eq(2).find("a").eq(2).click(); 
+            cy.get("table"); 
+           
+            });
+
+      });
+
+      describe("similar movie poster" ,() => {
+        it("should change URL and come to movie detail Page by click ", () => {
+          cy.get("div").eq(2).find("a").eq(2).click(); 
+          cy.get("table").find("a").eq(0).click(); 
+          cy.url().should("include", `/movies/281957`);
+          });
+
+      });
+
+    });
+});
