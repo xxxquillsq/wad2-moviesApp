@@ -1,4 +1,5 @@
 let movies;    // List of movies from TMDB
+const id = 724089; //topratedListMovie[1]
 
 // Utility functions
 const filterByTitle = (movieList, string) =>
@@ -7,7 +8,7 @@ const filterByTitle = (movieList, string) =>
 const filterByGenre = (movieList, genreId) =>
   movieList.filter((m) => m.genre_ids.includes(genreId));
 
-describe("Home Page", () => {
+describe("toprated Page", () => {
     before(() => {
      // Get movies from TMDB and store in movies variable.
     cy.request(
@@ -18,8 +19,18 @@ describe("Home Page", () => {
      .its("body")    // Take the body of HTTP response from TMDB
      .then((response) => {
       movies = response.results
-     })
-    })
+     });
+     cy.request(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${Cypress.env(
+        "TMDB_KEY"
+      )}`
+    )
+      .its("body")
+      .then((response) => {
+        console.log(response);
+        movies = response.results;
+      });
+    });
 
     beforeEach(() => {
       cy.visit("/movies/top_rated");
@@ -36,5 +47,15 @@ describe("Home Page", () => {
         it("dispalys Rating movies button",()=>{
             cy.get(".card").eq(1).find("a").contains("Rate the movie now!");
         })
+      });
+
+      describe("Navigation test",() => {
+        it("should turn to toprated movie detail page and change browser URL",()=>{
+          cy.get(".card").eq(1).find("img").click();
+          cy.url().should("include", `/movies/${id}`);
+          cy.get("h4").contains("Overview"); 
+        })
     });
-})
+
+   
+});
