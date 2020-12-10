@@ -1,7 +1,5 @@
 let persons;    // List of movies from TMDB
 
-
-
 describe("PopularPerson Page", () => {
     before(() => {
      // Get popular persons from TMDB and store in persons variable.
