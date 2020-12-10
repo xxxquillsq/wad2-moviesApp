@@ -42,11 +42,17 @@ describe("PopularPerson Page", () => {
       });
 
       describe("img click or button click and let borswer change", () => {
-        it("should display person detail and chnage URL ", () => {
+        it("should display person detail and change URL by click img ", () => {
             cy.get(".card").eq(1).find("img").click();
             cy.url().should("include", `/person/${persons[1].id}`);
             cy.get("h4").contains("Overview"); 
         });
+
+        it("should display person detail and change URL by click button ", () => {
+          cy.get(".card").eq(1).find("button").click();
+          cy.url().should("include", `/person/${persons[1].id}`);
+          cy.get("h4").contains("Overview"); 
+      });
       });
 
     });

@@ -31,9 +31,11 @@ const PersonCard = props => {
           </p>
         </div>
         <div className="card-footer">
+        <Link to={`/person/${props.person.id}`}>
           <button type="button" className="btn w-100 btn-primary">
             view more detail
           </button>
+          </Link>
         </div>
       </div>
     </div>
