@@ -48,7 +48,7 @@ describe("Show Similar Movies", () => {
                  .within(() => {
             cy.get("th").eq(0).contains("Title");
             cy.get("th").eq(1).contains("Overview");
-            cy.get("th").eq(2).contains("More");
+            cy.get("th").eq(2).contains("Movie");
           });
         });
       });

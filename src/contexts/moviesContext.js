@@ -11,6 +11,7 @@ const reducer = (state, action) => {
           m.id === action.payload.movie.id ? { ...m, favorite: true } : m
         ),
         upcoming: [...state.upcoming],//exercise3
+        toprated:[...state.toprated],//ca
       };
 
       case "add-watchlist":
@@ -19,8 +20,17 @@ const reducer = (state, action) => {
             m.id === action.payload.movie.id ? { ...m, watchlist: true } : m
           ),
           movies: [...state.movies],
-          
+          toprated:[...state.toprated],//ca
         };//exercise4
+
+        case "add-rateTheMovie":
+          return {
+            toprated: state.toprated.map((m) =>
+              m.id === action.payload.movie.id ? { ...m, ratetheMovie: true } : m
+            ),
+            movies: [...state.movies],
+            upcoming: [...state.upcoming],
+          };//ca
 
     case "load":
       return { movies: action.payload.movies, upcoming: [...state.upcoming], toprated: [...state.toprated] };//
@@ -56,6 +66,10 @@ const MoviesContextProvider = (props) => {
     const index = state.upcoming.map((m) => m.id).indexOf(movieId);
     dispatch({ type: "add-watchlist", payload: { movie: state.upcoming[index] } });//exercise4  movie-upcoming
   };
+  const rateTheMovie = (movieId) => {
+    const index = state.toprated.map((m) => m.id).indexOf(movieId);
+    dispatch({ type: "add-ratethemovie", payload: { movie: state.toprated[index] } });//exercise4  movie-upcoming
+  };//ca
 
   const addReview = (movie, review) => {
     dispatch({ type: "add-review", payload: { movie, review } });
@@ -89,6 +103,7 @@ const MoviesContextProvider = (props) => {
         toprated: state.toprated,
         addToFavorites: addToFavorites,
         addToWatchList: addToWatchList,//exercise4
+        rateTheMovie:rateTheMovie,
         addReview: addReview,
       }}
     >
