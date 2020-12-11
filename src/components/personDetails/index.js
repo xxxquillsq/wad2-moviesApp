@@ -1,7 +1,7 @@
 import React from "react";
 import "./personDetails.css";
 import "../../globals/fontawesome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const PersonDetails = props => {
   return (
