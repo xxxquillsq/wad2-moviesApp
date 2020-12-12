@@ -33,7 +33,8 @@ describe("toprated Page", () => {
     });
 
     beforeEach(() => {
-      cy.visit("/movies/top_rated");
+      cy.visit("/");
+      cy.get("nav").find("li").eq(2).find("a").click();
     });
   
     describe("Base test", () => {

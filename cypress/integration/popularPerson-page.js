@@ -15,7 +15,8 @@ describe("PopularPerson Page", () => {
     })
 
     beforeEach(() => {
-      cy.visit("/person/popular");
+      cy.visit("/");
+      cy.get("nav").find("li").eq(1).find("a").click();
     });
   
     describe("Base test", () => {

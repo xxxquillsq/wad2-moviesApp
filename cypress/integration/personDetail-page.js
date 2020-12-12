@@ -28,7 +28,8 @@ describe("Person Details Page", () => {
       })
   });
   beforeEach(() => {
-    cy.visit(`/person/popular`);
+    cy.visit(`/`);
+    cy.get("nav").find("li").eq(1).find("a").click();
     cy.get(".card").eq(2).find("img").click();
   });
 

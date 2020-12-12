@@ -28,7 +28,8 @@ describe("Show Similar Movies", () => {
       })
   });
   beforeEach(() => {
-    cy.visit(`/movies/top_rated`);
+    cy.visit(`/`);
+    cy.get("nav").find("li").eq(2).find("a").click();
     cy.get(".card").eq(1).find("img").click();
   });
 
