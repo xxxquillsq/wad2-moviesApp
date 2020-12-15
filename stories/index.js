@@ -7,7 +7,6 @@ import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
 import MovieHeader from "../src/components/headerMovie";
-import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
@@ -16,6 +15,7 @@ import PopularPersonList from "../src/components/popularPersonList";
 import FilterControlsPerson from "../src/components/filterControlsPerson";
 import PersonsHeader from "../src/components/headerPopularPersonList";
 import PersonDetails from "../src/components/personDetails";
+
 
 const sample = {
   adult: false,
@@ -181,3 +181,5 @@ storiesOf("Popular Person Page/FilterControlsPerson", module)
   storiesOf("Popular Person Page/PersonDetails", module).add("default", () => (
     <PersonDetails person={sample} />
   ));
+
+ 
