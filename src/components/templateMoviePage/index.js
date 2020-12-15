@@ -1,5 +1,6 @@
 import React from "react";
-import MovieHeader from '../headerMovie'
+import MovieHeader from '../headerMovie';
+import "bootswatch/dist/solar/bootstrap.min.css";
 import "./moviePage.css";
 
 const TemplateMoviePage = ({ movie, children }) => {

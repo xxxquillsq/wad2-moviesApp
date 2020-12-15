@@ -37,10 +37,11 @@ import PersonMovieCredits from "../components/personMovieCredits"
             <div className="col-9">
               <PersonDetails person={person} />
             </div>
-            <div className="col-9">
-             <h3>Movie Credits</h3>
+          
+            <div className="center">
+             <h3 className="text-light">Movie Credits</h3>
             </div>
-          <div className="col-9">
+          <div className="center">
               <PersonMovieCredits person={person} />
             </div>
           </div>

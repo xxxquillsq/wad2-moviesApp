@@ -27,7 +27,7 @@ export default ({ movie }) => {
               <tr key={m.id}>
                 <td>{m.title}</td>
                 <td>{excerpt(m.overview)}</td>
-                <td>
+                <td className="btn btn-outline-secondary">
                 <Link to={`/movies/${m.id}`}>
                   <img src={
                   m.poster_path

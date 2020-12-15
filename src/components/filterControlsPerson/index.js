@@ -9,16 +9,17 @@ const FilterControlsPerson = props => {
   ]
 
   return (
-      <div className="row bg-warning">
-        <div className="col-md-12">
-          <h4>
-            <span>List Filtering:</span>
+      <div className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="form-inline my-2 my-lg-0">
+          <h4 className="form-inline my-2 my-lg-0">
+            <span  className="navbar-brand">List Filtering:</span>
             <input
+            class="form-control mr-sm-2"
               type="text"
               placeholder="Title Search"
             />
-            <span>Genre:</span>
-            <select id="genre">
+            <span className="navbar-brand">Genre:</span>
+            <select className="form-control mr-sm-2" id="genre">
               {genres.map(genre => {
                 return (
                   <option key={genre.id} value={genre.id}>

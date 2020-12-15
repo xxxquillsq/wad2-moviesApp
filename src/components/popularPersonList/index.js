@@ -6,7 +6,7 @@ const PopularPersonList = props => {
   const personCards = props.persons.map(p => (
     <Person key={p.id} person={p} />
   ));
-  return <div className="row movies bg-info">{personCards}</div>;
+  return <div className="row movies">{personCards}</div>;
 };
 
 export default PopularPersonList;

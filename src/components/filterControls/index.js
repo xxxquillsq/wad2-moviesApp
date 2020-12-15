@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "bootswatch/dist/solar/bootstrap.min.css";
 import "./filterControls.css";
 import { GenresContext } from '../../contexts/genresContext' 
 
@@ -17,17 +18,20 @@ const FilterControls = props => {
   };
 
   return (
-    <div className="row bg-warning">
+    <div className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="col-md-12">
-        <h4>
-          <span>List Filtering:</span>
+        
+        <h4 className="form-inline my-2 my-lg-0">
+          <span className="navbar-brand">List Filtering:</span>
           <input
+            class="form-control mr-sm-2"
             type="text"
             placeholder="Title Search"
             onChange={handleTextChange}
           />
-          <span>Genre:</span>
-          <select id="genre" onChange={handleGenreChange}>
+          <span  className="navbar-brand">Genre:</span>
+
+          <select className="form-control mr-sm-2" id="genre" onChange={handleGenreChange} >
             {context.genres.map(genre => {
               return (
                 <option key={genre.id} value={genre.id}>

@@ -17,9 +17,15 @@ const MoviePage = props => {
         <PageTemplate movie={movie}>
           <MovieDetails movie={movie} />
         </PageTemplate>
-        <div className="row">
-          <div className="col-12 ">
-            {!props.history.location.pathname.endsWith("/reviews") ? (
+        <div className="center"> 
+          <p>
+            click button view more information
+          </p>
+        </div>
+       
+        <div className="center"> 
+        <button type="button" class="btn btn-primary btn-lg btn-block">
+        {!props.history.location.pathname.endsWith("/reviews") ? (
               <Link
                 className="btn btn-primary btn-block active"
                 to={`/movies/${id}/reviews`}
@@ -34,15 +40,23 @@ const MoviePage = props => {
                 Hide Reviews 
               </Link>
             )}
+          </button>
+
+          <div className="center"> 
+          <p>
+            
+          </p>
           </div>
-          <div className="col-12 ">
+        
+          <button type="button" class="btn btn-primary btn-lg btn-block">
           <Link
                 className="btn btn-primary btn-block active"
                 to={`/movies/${id}/similar`}
               >
                 Show Similar Movies
               </Link>
-          </div>
+              </button>
+         
         </div>
 
         <Route

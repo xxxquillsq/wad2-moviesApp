@@ -33,7 +33,7 @@ export default ({ person }) => {
                 <td>{r.character}</td>
                 <td>{excerpt(r.overview)}</td>
                 <td>{r.release_date}</td>
-                <td>
+                <td className="btn btn-outline-secondary">
                 <Link to={`/movies/${r.id}`}>
                   <img src={
                   r.poster_path
