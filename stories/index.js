@@ -17,6 +17,7 @@ import PersonsHeader from "../src/components/headerPopularPersonList";
 import PersonDetails from "../src/components/personDetails";
 
 
+
 const sample = {
   adult: false,
   backdrop_path: "/5Iw7zQTHVRBOYpA0V6z0yypOPZh.jpg",
