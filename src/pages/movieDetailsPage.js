@@ -24,7 +24,7 @@ const MoviePage = props => {
         </div>
        
         <div className="center"> 
-        <button type="button" class="btn btn-primary btn-lg btn-block">
+        <button type="button" className="btn btn-primary btn-lg btn-block">
         {!props.history.location.pathname.endsWith("/reviews") ? (
               <Link
                 className="btn btn-primary btn-block active"
@@ -48,7 +48,7 @@ const MoviePage = props => {
           </p>
           </div>
         
-          <button type="button" class="btn btn-primary btn-lg btn-block">
+          <button type="button" className="btn btn-primary btn-lg btn-block">
           <Link
                 className="btn btn-primary btn-block active"
                 to={`/movies/${id}/similar`}

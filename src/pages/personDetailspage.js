@@ -3,6 +3,7 @@ import PersonHeader from "../components/headerPerson";
 import PersonDetails from "../components/personDetails";
 import "./personPage.css";
 import PersonMovieCredits from "../components/personMovieCredits"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
   const PersonPage = props => {
@@ -38,8 +39,13 @@ import PersonMovieCredits from "../components/personMovieCredits"
               <PersonDetails person={person} />
             </div>
           
-            <div className="center">
+            <div className="row - center">   <FontAwesomeIcon
+        className="navbar-text text-light"
+        icon={["fas", "video"]}
+        size="3x"
+      />
              <h3 className="text-light">Movie Credits</h3>
+          
             </div>
           <div className="center">
               <PersonMovieCredits person={person} />

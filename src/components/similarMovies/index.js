@@ -13,7 +13,7 @@ export default ({ movie }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <table className="table table-striped table-bordered table-hover">
+    <table className="center table table-striped table-bordered table-hover">
       <thead>
         <tr>
           <th scope="col">Title</th>
@@ -26,7 +26,7 @@ export default ({ movie }) => {
             return (
               <tr key={m.id}>
                 <td>{m.title}</td>
-                <td>{excerpt(m.overview)}</td>
+                <td >{excerpt(m.overview)}</td>
                 <td className="btn btn-outline-secondary">
                 <Link to={`/movies/${m.id}`}>
                   <img src={

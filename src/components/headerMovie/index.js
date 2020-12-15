@@ -6,7 +6,7 @@ const MovieHeader = ({ movie, history }) => {
   return (
     <div className="row">
              <div className="col-2">
-          <button class="btn btn-outline-secondary" onClick={() => history.goBack()}>
+          <button className="btn btn-outline-secondary" onClick={() => history.goBack()}>
             <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" />
             <span>{" Back"}</span>
           </button>

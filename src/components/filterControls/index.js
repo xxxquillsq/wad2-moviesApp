@@ -24,7 +24,7 @@ const FilterControls = props => {
         <h4 className="form-inline my-2 my-lg-0">
           <span className="navbar-brand">List Filtering:</span>
           <input
-            class="form-control mr-sm-2"
+            className="form-control mr-sm-2"
             type="text"
             placeholder="Title Search"
             onChange={handleTextChange}

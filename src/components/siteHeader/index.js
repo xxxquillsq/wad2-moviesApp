@@ -7,7 +7,7 @@ import "./siteHeader.css";
 
 const SiteHeader = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <nav className="navbar-brand text-white">
         <Link className=" text-white" to="/">
           TMDB Client
@@ -27,13 +27,13 @@ const SiteHeader = () => {
         size="3x"
       />
       <nav className="navbar navbar-expand ">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
             <Link className="nav-link text-white" to="/">
               Home
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link className="nav-link" to="/person/popular">
               Popular person
             </Link>

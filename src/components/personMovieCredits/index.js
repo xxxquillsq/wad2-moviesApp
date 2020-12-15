@@ -16,7 +16,7 @@ export default ({ person }) => {
   return (
     <table className="table table-striped table-bordered table-hover">
       
-      <thead>
+      <thead class="text-success">
         <tr>
           <th scope="col">Movie Title</th>
           <th scope="col">character</th>
@@ -28,8 +28,8 @@ export default ({ person }) => {
       <tbody >
       {credits.map(r => {
             return (
-              <tr key={r.id}>
-                <td>{r.title}</td>
+              <tr key={r.id} >
+                <td >{r.title}</td>
                 <td>{r.character}</td>
                 <td>{excerpt(r.overview)}</td>
                 <td>{r.release_date}</td>

@@ -20,18 +20,18 @@ const PersonCard = props => {
           }
         />
         </Link>
-        <div class="card-body">
-          <h4 class="card-title ">{props.person.name}</h4>
+        <div className="card-body">
+          <h4 className="card-title ">{props.person.name}</h4>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span class="card-text"> {props.person.known_for_department}</span>
+            <span className="card-text"> {props.person.known_for_department}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span class="card-text">popularity: {props.person.popularity}</span>
+            <span className="card-text">popularity: {props.person.popularity}</span>
           </p>
         </div>
-        <div class="card-footer">
+        <div className="card-footer">
         <Link to={`/person/${props.person.id}`}>
           <button type="button" className="btn w-100 btn-primary">
             view more detail
