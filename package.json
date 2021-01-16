@@ -41,5 +41,6 @@
     "install": "^0.13.0",
     "npm": "^6.14.8",
     "start-server-and-test": "^1.10.6"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
